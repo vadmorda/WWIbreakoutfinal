@@ -1,3 +1,4 @@
+console.log("✅ breakout1.js loaded");
 (function () {
   "use strict";
 
