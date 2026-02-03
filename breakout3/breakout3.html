@@ -1,0 +1,233 @@
+<div id="b3-root">
+
+  <div id="b3-page-intro" class="page active">
+    <div class="intro-wrapper">
+      <div class="intro-image-container">
+        <img src="https://i.imgur.com/PHicHIe.jpeg" alt="Jacques in the bunker" class="intro-image">
+      </div>
+      <div class="intro-text">
+        <h1>WW1: Breakout - Part 3</h1>
+        <p>(text unchanged)</p>
+        <p>To proceed, enter the code from your previous mission.</p>
+
+        <div id="b3-code-box">
+          <p><strong>Enter the code to unlock the bunker:</strong></p>
+          <input type="text" id="b3-bunker-code" placeholder="Enter 5-digit code" maxlength="5">
+          <button id="b3-check-code">Submit</button>
+          <p id="b3-code-error" class="hidden" style="color:red;">Incorrect! Try again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="b3-challenge-1" class="page hidden">
+    <h1>Challenge 1: The Coded Message</h1>
+    <div class="challenge-wrapper">
+      <div class="challenge-image-container">
+        <img src="https://i.imgur.com/JNPIwoP.jpeg" width="300" height="200" alt="Zimmermann Telegram" class="challenge-image">
+      </div>
+      <div class="challenge-text">
+        <h2>1917 January and February main events</h2>
+        <p>• January 16: Germany sends the Zimmermann Telegram...</p>
+        <p>• February 1: Germany resumes unrestricted submarine warfare...</p>
+        <p>• February 3: The United States severs diplomatic relations...</p>
+      </div>
+    </div>
+
+    <div class="challenge-content">
+      <p><strong>Jacques finds a coded message fragment.</strong></p>
+      <p>Use the <strong>cipher key</strong>... (text unchanged)</p>
+      <p><strong>Encrypted Text:</strong> "Wklv lv d whvw phvvdjh..."</p>
+      <input type="text" id="b3-decryption-input" placeholder="Enter decoded message">
+      <button id="b3-check-decryption">Submit</button>
+      <p id="b3-decryption-feedback" class="hidden" style="color:red;">Incorrect! Try again.</p>
+    </div>
+  </div>
+
+  <div id="b3-decryption-success" class="hidden">
+    <p><strong>✅ Correct! You have deciphered the message.</strong></p>
+    <p>"This is a test message. We are offering Mexico the territory of Texas, New Mexico, and Arizona."</p>
+    <p>📜 This confirms the <strong>Zimmermann Telegram</strong> and its impact on the U.S. entry into the war.</p>
+    <button id="b3-go-to-transition">Continue</button>
+  </div>
+
+  <div id="b3-transition-page" class="page hidden">
+    <h1>Jacques' Next Move</h1>
+    <p>(text unchanged)</p>
+    <button id="b3-start-challenge-2">Proceed to Challenge 2</button>
+  </div>
+
+  <div id="b3-challenge-2" class="page hidden">
+    <h1>Challenge 2: Intelligence Report - The Turning Points of 1917</h1>
+
+    <div class="video-container">
+      <p><strong>Before proceeding, watch this intelligence briefing on the key events of 1917:</strong></p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/zz0Wz-o4dTI?si=NJ6VwWA6fFuHlz10" title="WWI Trench Warfare" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <p><strong>Answer the following multiple-choice questions:</strong></p>
+    <div id="b3-quiz-container">
+      <h2 id="b3-question-text">Loading question...</h2>
+      <div id="b3-answers-container"></div>
+      <p id="b3-quiz-feedback" class="hidden">Incorrect! Try again.</p>
+      <button id="b3-next-question" class="hidden">Next</button>
+    </div>
+  </div>
+
+  <div id="b3-challenge-2-success" class="hidden">
+    <p>✅ Well done! Jacques has completed his intelligence report successfully.</p>
+    <button id="b3-go-to-challenge-3" class="hidden">Proceed to Challenge 3</button>
+  </div>
+
+  <div id="b3-challenge-3" class="page hidden">
+    <!-- (text + letter area unchanged, but IDs fixed) -->
+    <div class="challenge-3-wrapper">
+      <div class="challenge-3-image-container">
+        <img src="https://i.imgur.com/wlB4Hv5.jpeg" alt="Jacques in the bunker" class="challenge-3-image">
+      </div>
+      <div class="challenge-3-text">
+        <h1>Jacques' Escape and a Fateful Discovery</h1>
+        <p>(text unchanged)</p>
+        <h1>Challenge 3: Letters from the Front</h1>
+        <p>Read the following letter from a soldier and answer the questions.</p>
+      </div>
+    </div>
+
+    <div id="b3-letter-container">
+      <p id="b3-letter-text">Loading letter...</p>
+    </div>
+
+    <p>Which front is the soldier describing?</p>
+    <button class="answer-button" data-question="front" data-answer="Western">Western Front</button>
+    <button class="answer-button" data-question="front" data-answer="Eastern">Eastern Front</button>
+
+    <p>Which country does the soldier or nurse belong to?</p>
+    <button class="answer-button" data-question="country" data-answer="British">British</button>
+    <button class="answer-button" data-question="country" data-answer="French">French</button>
+    <button class="answer-button" data-question="country" data-answer="German">German</button>
+    <button class="answer-button" data-question="country" data-answer="Russian">Russian</button>
+
+    <p>What year do you think this letter was written?</p>
+    <button class="answer-button" data-question="year" data-answer="1914">1914</button>
+    <button class="answer-button" data-question="year" data-answer="1915">1915</button>
+    <button class="answer-button" data-question="year" data-answer="1916">1916</button>
+    <button class="answer-button" data-question="year" data-answer="1917">1917</button>
+
+    <p id="b3-letter-feedback" class="hidden">Checking your answers...</p>
+    <button id="b3-next-letter" class="hidden">Next Letter</button>
+    <button id="b3-go-to-next-section" class="hidden">Continue to the Next Section</button>
+  </div>
+
+  <div id="b3-transition-challenge-4" class="page hidden">
+    <div class="transition-wrapper">
+      <div class="transition-image-container">
+        <!-- fixed: was IMAGE_URL_HERE -->
+        <img src="https://i.imgur.com/X92dEQS.jpeg" alt="Marching Soldiers" class="transition-image">
+      </div>
+      <div class="transition-text">
+        <h1>Jacques' Journey Continues</h1>
+        <p>(text unchanged)</p>
+      </div>
+    </div>
+
+    <h2>Key Events: March - July 1917</h2>
+    <ul class="timeline">
+      <li><strong>March 8:</strong> The February Revolution begins in Russia.</li>
+      <li><strong>March 15:</strong> Tsar Nicholas II abdicates; the Russian Empire collapses.</li>
+      <li><strong>April 6:</strong> The United States declares war on Germany.</li>
+      <li><strong>April 16 - May 9:</strong> The Nivelle Offensive ends in heavy losses for France.</li>
+      <li><strong>April 17:</strong> French soldiers begin mutinies.</li>
+      <li><strong>May 15:</strong> General Pétain replaces Nivelle as the French army commander.</li>
+      <li><strong>June 7:</strong> The British launch a successful attack at Messines in Belgium.</li>
+      <li><strong>July 1:</strong> The Kerensky Offensive in Russia fails.</li>
+      <li><strong>July 6:</strong> Lawrence of Arabia leads Arab forces to capture Aqaba from the Ottomans.</li>
+    </ul>
+
+    <button id="b3-start-challenge-4">Proceed to Challenge 4</button>
+  </div>
+
+  <div id="b3-challenge-4" class="page hidden">
+    <div class="challenge-4-wrapper">
+      <div class="challenge-4-image-container">
+        <img src="https://i.imgur.com/X92dEQS.jpeg" alt="Jacques in 1918" class="challenge-4-image">
+      </div>
+      <div class="challenge-4-text">
+        <h1>Jacques' Final Mission</h1>
+        <p>(text unchanged)</p>
+      </div>
+    </div>
+
+    <h2>🔹 Challenge 4: The Race Against Time</h2>
+
+    <div class="video-container">
+      <p><strong>Before you begin, watch this video about the key events of 1918:</strong></p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/zapbLqZUwrA?si=8xrFQYlEdn_6d8H5" title="WW1: The Final Year - 1918" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <p><strong>Instructions:</strong> drag and drop the events into the correct sequence.</p>
+
+    <div id="b3-timeline-container">
+      <ul id="b3-timeline-events">
+        <li class="timeline-event" draggable="true" data-year="1914">⚠️ Assassination of Archduke Franz Ferdinand</li>
+        <li class="timeline-event" draggable="true" data-year="1917">🔄 Russian Revolution - The Bolsheviks take power</li>
+        <li class="timeline-event" draggable="true" data-year="1918">🕊️ The Armistice is signed, ending the war</li>
+        <li class="timeline-event" draggable="true" data-year="1915">💀 First use of poison gas in warfare</li>
+        <li class="timeline-event" draggable="true" data-year="1916">⚔️ Battle of the Somme - One of the bloodiest battles</li>
+        <li class="timeline-event" draggable="true" data-year="1918">🇺🇸 The United States plays a decisive role in battle</li>
+      </ul>
+    </div>
+
+    <button id="b3-submit-timeline">Check Order</button>
+    <p id="b3-timeline-feedback" class="hidden">Checking answers...</p>
+    <button id="b3-proceed-after-timeline" class="hidden">Proceed to the Final Section</button>
+  </div>
+
+  <div id="b3-challenge-5-intro" class="page hidden">
+    <div class="challenge-5-wrapper">
+      <div class="challenge-5-image-container">
+        <!-- fixed: was REPLACE_WITH_YOUR_IMAGE -->
+        <img src="https://i.imgur.com/PHicHIe.jpeg" alt="Jacques in 1918" class="challenge-5-image">
+      </div>
+      <div class="challenge-5-text">
+        <h1>Jacques' Final Mission</h1>
+        <p>(text unchanged)</p>
+      </div>
+    </div>
+
+    <h2>🔹 Read or watch the 1918 War Briefing</h2>
+    <p>(long text unchanged)</p>
+
+    <div class="video-container">
+      <p><strong>Before proceeding, watch this video about the key events of 1918 and take notes:</strong></p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/zapbLqZUwrA?si=Jhu1wlq73J4nI2ZD" title="WW1: The Final Year - 1918" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <p class="note-warning">⚠️ <strong>Important:</strong> Take notes on key battles, troop movements, and strategies.</p>
+    <button id="b3-start-challenge-5">Proceed to the Map Challenge</button>
+  </div>
+
+  <div id="b3-challenge-5" class="page hidden">
+    <h1>Challenge 5: The Lost Map - Movements of Troops in 1918</h1>
+
+    <div class="map-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Western_Front_1918_Amiens.png" alt="Western Front Map 1918" class="battle-map">
+
+      <div class="drop-zone" id="b3-zone-saint-quentin" data-location="Saint-Quentin">?</div>
+      <div class="drop-zone" id="b3-zone-marne" data-location="Marne River">?</div>
+      <div class="drop-zone" id="b3-zone-amiens" data-location="Amiens">?</div>
+      <div class="drop-zone" id="b3-zone-compiegne" data-location="Compiègne">?</div>
+    </div>
+
+    <div class="draggable-items">
+      <div class="draggable" id="b3-drag-saint-quentin" data-location="Saint-Quentin" draggable="true">Saint-Quentin</div>
+      <div class="draggable" id="b3-drag-marne" data-location="Marne River" draggable="true">Marne River</div>
+      <div class="draggable" id="b3-drag-amiens" data-location="Amiens" draggable="true">Amiens</div>
+      <div class="draggable" id="b3-drag-compiegne" data-location="Compiègne" draggable="true">Compiègne</div>
+    </div>
+
+    <button id="b3-check-map">Check Answer</button>
+    <p id="b3-map-feedback" class="hidden"></p>
+    <button id="b3-proceed-to-next-section" class="hidden">Proceed to the Next Section</button>
+  </div>
+
+</div>
