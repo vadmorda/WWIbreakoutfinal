@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WWI Breakout – Integrated</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./shared/app.css" />
+  <link rel="stylesheet" href="./breakout1/breakout1.css" />
+  <link rel="stylesheet" href="./breakout2/breakout2.css" />
+  <link rel="stylesheet" href="./breakout3/breakout3.css" />
+</head>
+
+<body>
+  <!-- Non-intrusive progress -->
+  <div id="app-progress" aria-label="Breakout progress"></div>
+
+  <main id="app" role="main">
+    <!-- Shell intro (minimal, not redesigning breakouts) -->
+    <section id="screen-shell" class="app-screen" data-screen="shell">
+      <div class="app-shell">
+        <h1>World War I Breakout</h1>
+        <p>Complete Part 1 → Part 2 → Part 3 to reach the final screen.</p>
+        <div class="app-shell-actions">
+          <button id="app-start" type="button">Start</button>
+          <button id="app-continue" type="button" class="hidden">Continue</button>
+          <button id="app-reset" type="button" class="app-secondary">Reset progress</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-b1" class="app-screen hidden" data-screen="b1">
+      <div id="b1-scope" class="breakout-scope"></div>
+    </section>
+
+    <section id="screen-b2" class="app-screen hidden" data-screen="b2">
+      <div id="b2-scope" class="breakout-scope"></div>
+    </section>
+
+    <section id="screen-b3" class="app-screen hidden" data-screen="b3">
+      <div id="b3-scope" class="breakout-scope"></div>
+    </section>
+
+    <section id="screen-final" class="app-screen hidden" data-screen="final">
+      <div class="app-shell">
+        <h2>Mission Complete</h2>
+        <p>You have completed all three parts.</p>
+        <button id="app-restart" type="button">Restart</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./shared/storage.js"></script>
+  <script src="./shared/progress.js"></script>
+  <script src="./shared/app.js"></script>
+
+  <script src="./breakout1/breakout1.js"></script>
+  <script src="./breakout2/breakout2.js"></script>
+  <script src="./breakout3/breakout3.js"></script>
+</body>
+</html>
