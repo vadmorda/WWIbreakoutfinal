@@ -1,0 +1,83 @@
+/* Shared shell only (kept minimal to avoid touching breakout UIs) */
+:root {
+  --app-accent: #e94560;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: "Special Elite", "Roboto", sans-serif;
+}
+
+/* progress bar (non-intrusive) */
+#app-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.app-step {
+  flex: 1;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.6;
+}
+.app-step.unlocked { opacity: 1; }
+.app-step.active {
+  border-color: rgba(233,69,96,0.8);
+  box-shadow: 0 0 10px rgba(233,69,96,0.25);
+}
+
+.app-screen {
+  min-height: 100vh;
+  padding-top: 52px; /* keeps progress bar from overlapping */
+}
+
+.hidden { display: none !important; }
+
+.app-shell {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.app-shell-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.app-shell button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--app-accent);
+  color: #fff;
+  font-size: 18px;
+}
+.app-shell button.app-secondary {
+  background: #444;
+}
