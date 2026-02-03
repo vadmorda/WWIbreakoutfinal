@@ -1,0 +1,150 @@
+/* Breakout 1 scoped styles */
+#b1-scope {
+  margin: 0;
+  padding: 0;
+  font-family: "Special Elite", "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Utility */
+#b1-scope .hidden { display: none; }
+
+/* Title */
+#b1-scope #b1-global-title h1 {
+  font-size: 5em;
+  color: #e94560;
+  animation: blink 1.5s infinite;
+  text-shadow: 0 0 10px #e94560, 0 0 20px #ff5f7e;
+  margin-top: 20px;
+}
+
+/* Intro */
+#b1-scope .intro-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+#b1-scope .intro-content h2,
+#b1-scope .intro-content h1 {
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+  border: 2px solid #e94560;
+  color: #fff;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+#b1-scope .intro-content h1 {
+  margin-top: 20px;
+  font-size: 2em;
+}
+
+#b1-scope .intro-content .button {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5em;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#b1-scope .intro-content .button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #e94560;
+}
+
+#b1-scope #b1-code-entry {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#b1-scope #b1-code-entry input {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  border: 2px solid #e94560;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+}
+
+#b1-scope .page {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#b1-scope .page.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#b1-scope #b1-quiz,
+#b1-scope #b1-questions-container-2 {
+  margin: 20px auto;
+  text-align: center;
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border: 2px solid #e94560;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+#b1-scope #b1-answers button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#b1-scope #b1-answers button:hover {
+  background-color: #e94560;
+}
+
+/* (Resto de tu CSS de reto2/next-button mantenido, scoping básico) */
+#b1-scope #b1-challenge-2 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+#b1-scope #b1-next-button-2.hidden { display: none; }
+
+@media (max-width: 768px) {
+  #b1-scope #b1-global-title h1 { font-size: 3em; }
+  #b1-scope .intro-content h2,
+  #b1-scope .intro-content h1 { font-size: 1em; }
+}
