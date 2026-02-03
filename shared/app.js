@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-
+console.log("APP.JS loaded");
   const state = window.AppStorage.load();
 
   const screens = {
