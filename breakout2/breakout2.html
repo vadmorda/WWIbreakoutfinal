@@ -1,0 +1,46 @@
+<div id="b2-root">
+  <div id="b2-page-intro" class="page active" style="min-height: 100vh; padding: 20px; background-color: #000;">
+    <div id="b2-global-title">
+      <h1>WW1: Breakout</h1>
+    </div>
+
+    <div class="intro-content" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:20px; max-width:90%; margin:auto; flex-wrap:wrap;">
+        <img src="https://i.imgur.com/QmvVrYt.jpeg" alt="Jacques in WWI" style="max-width: 25%; height: auto; border-radius: 10px;">
+        <div style="max-width: 60%;">
+          <h2>Jacques has managed to overcome the field of barbed wire... (text unchanged)</h2>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px; width: 100%; display: flex; justify-content: center;">
+        <button class="button" id="b2-start-challenge-1" style="padding:15px 30px; font-size:1.5em; background-color:#e94560; color:white; border:none; border-radius:8px; cursor:pointer;">
+          Enter War Zone
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="b2-challenge-1" class="page hidden" style="min-height: 100vh; padding: 20px; background-color: #000; color: white; text-align: center;">
+    <h1>Jacques' Rest</h1>
+    <p id="b2-challenge-1-text" style="max-width: 80%; margin: auto; background: rgba(0,0,0,0.7); padding:20px; border-radius:10px;">
+      Inside a room... (text unchanged)
+    </p>
+    <button class="button" id="b2-read-memory">Read His Memory</button>
+  </div>
+
+  <div id="b2-memory-page" class="page hidden" style="min-height: 100vh; padding: 20px; background-image: url('https://i.imgur.com/sAS9ZuK.jpeg'); background-size: cover; color: white; text-align: center;">
+    <h1>Jacques' Memory</h1>
+    <p id="b2-memory-text" style="max-width: 80%; margin: auto; background: rgba(0,0,0,0.7); padding:20px; border-radius:10px;">
+      [Insert full historical text here]
+    </p>
+
+    <div id="b2-quiz-container" class="hidden">
+      <h2 id="b2-question-text">Loading question...</h2>
+      <div id="b2-answers-container"></div>
+      <p id="b2-error-message" class="hidden" style="color:red;">Incorrect! Try again.</p>
+    </div>
+    <button id="b2-next-question" class="hidden" style="margin-top:20px; padding:10px 20px; font-size:1.2em; background-color:#e94560; color:white; border:none; border-radius:8px; cursor:pointer;">
+      Next
+    </button>
+  </div>
+</div>
