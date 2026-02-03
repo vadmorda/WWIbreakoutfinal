@@ -1,3 +1,5 @@
+console.log("✅ app.js loaded");
+console.log("Breakouts registry:", window.Breakouts);
 (function () {
   "use strict";
 console.log("APP.JS loaded");
