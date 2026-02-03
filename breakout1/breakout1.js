@@ -7,6 +7,8 @@ console.log("✅ breakout1.js loaded");
     mount.dataset.initialized = "1";
 
     // Inject HTML
+    console.log("📦 fetching breakout1.html...");
+
     fetch("./breakout1/breakout1.html")
       .then(r => r.text())
       .then(html => {
