@@ -10,13 +10,22 @@ console.log("✅ breakout1.js loaded");
     console.log("📦 fetching breakout1.html...");
 
     fetch("./breakout1/breakout1.html")
-      .then(r => r.text())
-      .then(html => {
-        mount.innerHTML = html;
-        wire(mount, api);
-      })
-      .catch(err => console.error("b1 html load error", err));
-  }
+ console.log("📦 fetching breakout1.html...");
+
+fetch("./breakout1/breakout1.html")
+  .then((r) => {
+    console.log("📦 fetch response:", r.status, r.statusText, r.url);
+    if (!r.ok) throw new Error("Fetch failed: " + r.status + " " + r.statusText);
+    return r.text();
+  })
+  .then((html) => {
+    console.log("📦 breakout1.html length:", html.length);
+    // aquí tu inyección normal...
+  })
+  .catch((err) => {
+    console.error("❌ breakout1.html fetch error:", err);
+  });
+
 
   function wire(root, api) {
     const pages = root.querySelectorAll(".page");
