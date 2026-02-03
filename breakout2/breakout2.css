@@ -1,0 +1,39 @@
+/* Breakout 2 scoped */
+#b2-scope {
+  margin: 0;
+  padding: 0;
+  font-family: "Special Elite","Roboto",sans-serif;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+#b2-scope .page { display: none; }
+#b2-scope .hidden { display: none !important; }
+
+#b2-scope #b2-global-title h1 {
+  font-size: 5em;
+  color: #e94560;
+  animation: blink 1.5s infinite;
+  text-shadow: 0 0 10px #e94560, 0 0 20px #ff5f7e;
+  margin-top: 20px;
+}
+
+#b2-scope button {
+  padding: 15px 30px;
+  font-size: 1.5em;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#b2-scope #b2-memory-text {
+  max-width: 80%;
+  margin: auto;
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
