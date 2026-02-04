@@ -1,6 +1,17 @@
 console.log("✅ breakout1.js loaded");
 (function () {
   "use strict";
+function mountFromTemplate(scopeId, tplId) {
+  const mount = document.getElementById(scopeId);
+  if (!mount) throw new Error("Missing #" + scopeId + " in index.html");
+
+  const tpl = document.getElementById(tplId);
+  if (!tpl) throw new Error("Missing template #" + tplId + " in index.html");
+
+  mount.innerHTML = "";
+  mount.appendChild(tpl.content.cloneNode(true));
+  return mount;
+}
 
   function init(mount, api) {
     if (mount.dataset.initialized === "1") return;
@@ -26,6 +37,11 @@ fetch("./breakout1/breakout1.html")
     console.error("❌ breakout1.html fetch error:", err);
   });
 
+function init(api) {
+  console.log("✅ b1 init");
+  const root = mountFromTemplate("b1-scope", "tpl-b1");
+  wire(root, api);
+}
 
   function wire(root, api) {
     const pages = root.querySelectorAll(".page");
