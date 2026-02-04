@@ -1,3 +1,418 @@
+/* 🔹 GENERAL STYLES */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Special Elite", "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+/* 🔹 PAGE STYLING */
+.page {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.page.active {
+  display: block !important;
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 🔹 HIDDEN ELEMENT */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* 🔹 BUTTON STYLES */
+button {
+  padding: 15px 30px;
+  font-size: 1.5em;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 🔹 FLEXBOX FOR INTRO PAGE */
+.intro-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  max-width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: left;
+}
+
+/* 🔹 IMAGE STYLES */
+.intro-image-container {
+  flex-shrink: 0;
+  width: 30%;
+  max-width: 250px;
+}
+
+.intro-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* 🔹 TEXT STYLING */
+.intro-text {
+  flex: 1;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 🔹 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .intro-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro-image-container {
+    width: 50%;
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .intro-text {
+    text-align: center;
+    max-width: 80%;
+  }
+}
+
+/* 🔹 VIDEO CONTAINER */
+.video-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 🔹 QUIZ CONTAINER */
+#quiz-container {
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answer-button {
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.answer-button:hover {
+  background-color: #e94560;
+}
+
+#quiz-feedback {
+  color: red;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+#next-question {
+  margin-top: 20px;
+  background-color: #28a745;
+}
+/* 🔹 Challenge 3 Styling */
+.challenge-3-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.challenge-3-image-container {
+    flex-shrink: 0;
+    width: 30%;
+    max-width: 250px;
+}
+
+.challenge-3-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.challenge-3-text {
+    flex: 1;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* 🔹 Responsive Design for Challenge 3 */
+@media (max-width: 768px) {
+    .challenge-3-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .challenge-3-image-container {
+        width: 50%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .challenge-3-text {
+        text-align: center;
+        max-width: 80%;
+    }
+}
+
+
+/* Answer Buttons */
+.answer-button {
+    display: block;
+    width: 50%;  /* Reduced width from 80% to 50% */
+    max-width: 300px; /* Ensures buttons are not too wide on larger screens */
+    margin: 10px auto;
+    padding: 12px; /* Slightly larger padding for better clickability */
+    font-size: 1.2em;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* 🔹 Hover Effect for Better Feedback */
+.answer-button:hover {
+    background-color: #e94560;
+    transform: scale(1.05);
+}
+
+
+/* 🔹 Responsive Adjustment for Small Screens */
+@media (max-width: 600px) {
+    .answer-button {
+        width: 70%; /* Increase width slightly on small screens for better touch experience */
+        max-width: none;
+    }
+}
+/* Feedback Message */
+#letter-feedback {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+/* 🔹 TRANSITION PAGE STYLES */
+.transition-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+    gap: 20px;
+}
+
+/* 🔹 IMAGE STYLES */
+.transition-image-container {
+    flex-shrink: 0;
+    width: 40%;
+    max-width: 350px;
+}
+
+.transition-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* 🔹 TEXT STYLES */
+.transition-text {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* 🔹 TIMELINE STYLING */
+.timeline {
+    text-align: left;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.timeline li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-left: 4px solid #e94560;
+}
+/* 🔹 CHALLENGE 4: GENERAL STYLES */
+.challenge-4-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.challenge-4-image-container {
+    flex-shrink: 0;
+    width: 30%;
+    max-width: 250px;
+}
+
+.challenge-4-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.challenge-4-text {
+    flex: 1;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* 🔹 TIMELINE SORTING AREA */
+#timeline-container {
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#timeline-events {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-event {
+    background: #444;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: grab;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.timeline-event:hover {
+    background: #e94560;
+}
+
+/* 🔹 Button Styles */
+#submit-timeline {
+    margin-top: 20px;
+    background-color: #28a745;
+}
+
+#proceed-after-timeline {
+    background-color: #007bff;
+}
+/* 🔹 CHALLENGE 5 GENERAL STYLING */
+.challenge-5-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.challenge-5-image-container {
+    flex-shrink: 0;
+    width: 30%;
+    max-width: 300px;
+}
+
+.challenge-5-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.challenge-5-text {
+    flex: 1;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* 🔹 VIDEO CONTAINER */
+.video-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 🔹 NOTE WARNING */
+.note-warning {
+    font-size: 1.2em;
+    color: #ffcc00;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
 /* Minimal functional styles for Challenge 5 map interactions (no redesign) */
 .map-container {
   position: relative;
