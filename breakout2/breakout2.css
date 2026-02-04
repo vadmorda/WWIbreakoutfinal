@@ -1,18 +1,38 @@
-/* Breakout 2 scoped */
-#b2-scope {
+body {
   margin: 0;
   padding: 0;
-  font-family: "Special Elite","Roboto",sans-serif;
+  font-family: "Special Elite", "Roboto", sans-serif;
   background-color: #000;
   color: #fff;
   text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow-x: hidden;
 }
 
-#b2-scope .page { display: none; }
-#b2-scope .hidden { display: none !important; }
+.page {
+    display: none; /* 🔹 AHORA TODAS LAS PÁGINAS ESTÁN OCULTAS POR DEFECTO */
+}
 
-#b2-scope #b2-global-title h1 {
+.page.active {
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+#global-title h1 {
   font-size: 5em;
   color: #e94560;
   animation: blink 1.5s infinite;
@@ -20,7 +40,7 @@
   margin-top: 20px;
 }
 
-#b2-scope button {
+button {
   padding: 15px 30px;
   font-size: 1.5em;
   background-color: #e94560;
@@ -30,10 +50,27 @@
   cursor: pointer;
 }
 
-#b2-scope #b2-memory-text {
+#memory-page {
+  background-image: url('https://i.imgur.com/sAS9ZuK.jpeg');
+  background-size: cover;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+#memory-text {
   max-width: 80%;
   margin: auto;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 10px;
+}
+
+#quiz-container {
+  display: none;
+}
+
+#quiz-container.active {
+  display: block;
 }
