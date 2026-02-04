@@ -3,93 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WW1: Breakout part 2</title>
+  <title>WW1: Breakout</title>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="page-intro" class="page active">
-    <div id="global-title"><h1>WW1: Breakout</h1></div>
+  <!-- Página Inicial -->
+  <div id="page-intro" class="page active" style="background-image: url('https://drive.google.com/uc?id=15_b0kuH8zKdOYNc_7vGSjsLL7FsOoTed');">
+    <div id="global-title">
+      <h1>WW1: Breakout</h1>
+    </div>
     <div class="intro-content">
-      <img src="https://i.imgur.com/QmvVrYt.jpeg" alt="Jacques in WWI" style="max-width: 25%; margin-bottom: 10px;">
-      <div>
-        <h2>Jacques has managed to overcome the field of barbed wire... (text unchanged)</h2>
+      <h2>
+        Welcome to the WW1 Breakout! Follow Jacques, a French soldier during the Battle of Verdun in 1916.
+        Jacques must deliver a crucial message to Captain Henri Boudoux to halt a planned offensive against the Germans, who are preparing a deadly trap.
+      </h2>
+      <h1>Are you ready to test your knowledge and help Jacques succeed?</h1>
+      <button class="button" id="start-game">Enter War Zone</button>
+
+      <div id="code-entry">
+        <p>If you already have a code, enter it below to continue to Challenge 3:</p>
+        <input type="text" id="code-input" maxlength="5" placeholder="Enter 5-digit code">
+        <button class="button" id="code-verify">Continue to Challenge 3</button>
+        <p id="code-error" class="hidden" style="color: red; font-weight: bold;">Invalid code. Please try again.</p>
       </div>
     </div>
-    <button class="button" id="start-challenge-1">Enter War Zone</button>
-    <button class="button" id="to-shell" style="margin-top:10px;">Back to Mission Hub</button>
   </div>
 
+  <!-- Reto 1 -->
   <div id="challenge-1" class="page hidden">
-    <h1>Jacques' Rest</h1>
-    <img src="https://i.imgur.com/PHicHIe.jpeg" alt="Jacques in WWI" style="max-width: 25%; margin-bottom: 10px;">
-    <p>(text unchanged)</p>
-    <button class="button" id="read-memory">Read His Memory</button>
-  </div>
-
-  <div id="memory-page" class="page hidden">
-    <h1>Jacques' Memory</h1>
-    <div id="memory-text"><p>(text unchanged)</p></div>
-
-    <!-- Quiz container moved INSIDE a page to prevent floating -->
-    <div id="quiz-container">
-      <h2 id="question-text">Loading question...</h2>
-      <div id="answers-container"></div>
-      <p id="error-message" class="hidden" style="color: red;">Incorrect! Try again.</p>
-      <button id="next-question" class="hidden">Next</button>
+    <h2>Challenge 1: The Causes of World War I</h2>
+    <p>Watch the video below, stop it whenever you need, take notes and then, answer the questions to proceed.</p>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/BXtGneTCMgU" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="quiz">
+      <p id="question-text"></p>
+      <div id="answers"></div>
     </div>
   </div>
 
-  <div id="challenge-2" class="page hidden">
-    <h1>Jacques' Awakening</h1>
-    <div class="challenge-2-container">
-      <div class="story-section"><p>(text unchanged)</p></div>
-      <div class="video-section">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/l-b746J2SdI?si=M8pMKt8V8Qqbb73t" title="WWI Trench Warfare" frameborder="0" allowfullscreen></iframe>
-        <p>🎥 Watch the video carefully and take notes if necessary.</p>
-      </div>
+  <!-- Página de Transición después del Reto 1 -->
+  <div id="transition-page" class="page hidden" style="background-image: url('https://drive.google.com/uc?id=1UxLa6yAY0UB_2vdIGY-pTECVUZxLgig3');">
+    <h2>Mission Update</h2>
+    <p>Jacques has reached the temporary shelter... (text unchanged)</p>
+    <button id="to-challenge-2" class="button">Proceed to Challenge 2</button>
+  </div>
+
+  <!-- Challenge 2 -->
+  <div id="challenge-2" class="page hidden" style="background-image: url('https://i.ibb.co/vv1fS6h/war-map-background.jpg');">
+    <div id="map-container">
+      <h2>Observe the map carefully</h2>
+      <img src="https://drive.google.com/uc?id=1A3O0qayZvs8AuLO1lFZqRQ2s2MPShGDQ" alt="World War I Map" style="width: 80%; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+      <button class="button" id="start-challenge-2">Start Questions</button>
     </div>
 
-    <div id="quiz-container-2">
+    <div id="questions-container-2" class="hidden">
       <h2 id="question-text-2">Loading question...</h2>
       <div id="answers-container-2"></div>
+      <button class="button hidden" id="next-button-2">Next</button>
       <p id="error-message-2" class="hidden" style="color: red;">Incorrect! Try again.</p>
-      <button id="next-question-2" class="hidden">Next</button>
     </div>
   </div>
 
-  <div id="transition-page" class="page hidden">
-    <h1>Enigma Challenge</h1>
-    <p>You have answered all questions. Now, to proceed, solve the enigma.</p>
+  <!-- Página de Transición después del Reto 2 -->
+  <div id="transition-to-challenge-3" class="page hidden">
+    <h2>Mission Update</h2>
+    <img src="https://drive.google.com/uc?id=1-MH7k8zVMWrE4UPbPfqRJg1iD8ZxhzJN" alt="Mission Briefing" style="max-width: 100%; border-radius: 10px;">
+    <p>(text unchanged)</p>
+    <p>Your access code is: <strong id="generated-code"></strong></p>
+    <p>Enter this code in the box below to proceed to Challenge 3, or save it for later:</p>
+    <input type="text" id="access-code" maxlength="5" placeholder="Enter 5-digit code">
+    <button id="verify-code" class="button">Submit</button>
+    <p id="code-error-message" class="hidden" style="color: red; font-weight: bold;">Invalid code. Please try again.</p>
+  </div>
 
-    <img src="https://i.imgur.com/EJbbhGM.jpeg" alt="Clues Found by Jacques" style="max-width: 25%; margin-bottom: 20px;">
-
-    <p>Jacques found a torn piece of paper with four clues:</p>
-    <ul>
-      <li>The first digit is the number of battles fought on the Western Front in 1915.</li>
-      <li>The last digit is the number of letters in the word "trench."</li>
-      <li>Jacques finds an old map next to the box. Marked on the map is the date March 2, 1916, but one of the numbers is heavily underlined with a red pen.</li>
-      <li>"Victory was declared on the third day of the fifth month, but the day held the clue we sought."</li>
-    </ul>
-
-    <p>Enter the 4-digit code to unlock the box:</p>
-    <input type="text" id="enigma-answer" placeholder="Enter your answer" maxlength="4" style="margin-bottom: 10px;">
-    <button id="check-enigma">Submit</button>
-
-    <p id="enigma-feedback" class="hidden" style="color: red;">Incorrect! Try again.</p>
-
-    <div id="enigma-success" class="hidden" style="margin-top: 20px; text-align: center;">
-      <img src="https://i.imgur.com/kVxqsNp.gif" alt="Unlocked Papers" style="max-width: 50%; margin-bottom: 10px;">
-      <img src="https://i.imgur.com/fx69nfO.jpeg" alt="Unlocked Papers" style="max-width: 50%; margin-bottom: 10px;">
-      <p style="font-weight: bold; font-size: 1.2em;">Look carefully into the papers and take note.</p>
-      <p>You have successfully completed part 2 of the breakout. Now Jacques is sure his mission is more important than ever. He has found proof of the German deadly plan.</p>
-
-      <!-- Bridge to Part 3 (does not change the enigma itself) -->
-      <p><strong>Your bunker code for Part 3 is: 19423</strong></p>
-      <button class="button" id="go-part-3" style="margin-top: 10px;">Proceed to Part 3</button>
-      <button class="button" id="back-to-hub" style="margin-top: 10px;">Back to Mission Hub</button>
+  <!-- Reto 3 -->
+  <div id="challenge-3" class="page hidden" style="background-image: url('https://drive.google.com/uc?id=10YcO6NQE4mLXT9ohwdSUVWXGYp6jB1ON');">
+    <h2>War of Movements</h2>
+    <p>(text unchanged)</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PbwH1ZBnYds" allowfullscreen></iframe>
+    <div id="quiz-3-container">
+      <h3 id="question-3-text">Loading question...</h3>
+      <div id="answers-3-container"></div>
+      <p id="error-3-message" class="hidden" style="color: red; font-weight: bold;">Incorrect! Try again.</p>
     </div>
+  </div>
+
+  <!-- Página Final -->
+  <div id="final-page" class="page hidden" style="background-image: url('https://drive.google.com/uc?id=1-MH7k8zVMWrE4UPbPfqRJg1iD8ZxhzJN');">
+    <h2>Jacques has succeeded!</h2>
+    <p>(text unchanged)</p>
+    <p>Your access code for the next breakout is: <strong id="final-code"></strong></p>
+    <button class="button" id="to-shell" style="margin-top: 14px;">Back to Mission Hub</button>
   </div>
 
   <script src="../shared/progress.js"></script>
