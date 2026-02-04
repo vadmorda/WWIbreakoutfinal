@@ -1,17 +1,18 @@
 <div id="b1-root">
-
-
   <!-- Intro -->
   <div id="b1-page-intro" class="page active" style="background-image: url('https://drive.google.com/uc?id=15_b0kuH8zKdOYNc_7vGSjsLL7FsOoTed');">
     <div id="b1-global-title">
       <h1>WW1: Breakout</h1>
     </div>
+
     <div class="intro-content">
       <h2>
         Welcome to the WW1 Breakout! Follow Jacques, a French soldier during the Battle of Verdun in 1916.
         Jacques must deliver a crucial message to Captain Henri Boudoux to halt a planned offensive against the Germans, who are preparing a deadly trap.
       </h2>
+
       <h1>Are you ready to test your knowledge and help Jacques succeed?</h1>
+
       <button class="button" id="b1-start-game">Enter War Zone</button>
 
       <div id="b1-code-entry">
@@ -27,9 +28,11 @@
   <div id="b1-challenge-1" class="page hidden">
     <h2>Challenge 1: The Causes of World War I</h2>
     <p>Watch the video below, stop it whenever you need, take notes and then, answer the questions to proceed.</p>
+
     <div class="video-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/BXtGneTCMgU" frameborder="0" allowfullscreen></iframe>
     </div>
+
     <div id="b1-quiz">
       <p id="b1-question-text"></p>
       <div id="b1-answers"></div>
@@ -39,7 +42,14 @@
   <!-- Transition after Challenge 1 -->
   <div id="b1-transition-page" class="page hidden" style="background-image: url('https://drive.google.com/uc?id=1UxLa6yAY0UB_2vdIGY-pTECVUZxLgig3');">
     <h2>Mission Update</h2>
-    <p>Jacques has reached the temporary shelter... (text unchanged)</p>
+    <p>
+      Jacques has reached the temporary shelter.
+      He bravely crossed the cold, flooded trenches filled with soldiers enduring hunger and exhaustion.
+      Finally, he has reached a small earth-and-wooden shelter where his officer, along with other officials,
+      is examining topographic maps of the Verdun region south of the Meuse River, identifying the positions
+      of the Germans in the trenches around Metz. Jacques now awaits further orders and the encrypted document
+      he must deliver to the frontline trenches closest to the German positions.
+    </p>
     <button id="b1-to-challenge-2" class="button">Proceed to Challenge 2</button>
   </div>
 
@@ -47,7 +57,8 @@
   <div id="b1-challenge-2" class="page hidden" style="background-image: url('https://i.ibb.co/vv1fS6h/war-map-background.jpg');">
     <div id="b1-map-container">
       <h2>Observe the map carefully</h2>
-      <img src="https://drive.google.com/uc?id=1A3O0qayZvs8AuLO1lFZqRQ2s2MPShGDQ" alt="World War I Map" style="width: 80%; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+      <img src="https://drive.google.com/uc?id=1A3O0qayZvs8AuLO1lFZqRQ2s2MPShGDQ" alt="World War I Map"
+           style="width: 80%; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
       <button class="button" id="b1-start-challenge-2">Start Questions</button>
     </div>
 
@@ -63,7 +74,12 @@
   <div id="b1-transition-to-challenge-3" class="page hidden">
     <h2>Mission Update</h2>
     <img src="https://drive.google.com/uc?id=1-MH7k8zVMWrE4UPbPfqRJg1iD8ZxhzJN" alt="Mission Briefing" style="max-width: 100%; border-radius: 10px;">
-    <p>(text unchanged)</p>
+    <p>
+      The officer explains that Jacques must deliver an encrypted message warning the battalion on the frontlines
+      not to attack within two days. The Germans have set a deadly trap designed to annihilate the French and
+      British first-line troops, paving their way to win the Battle of the Marne. Despite the near-impossible odds,
+      Jacques accepts the mission.
+    </p>
     <p>Your access code is: <strong id="b1-generated-code"></strong></p>
     <p>Enter this code in the box below to proceed to Challenge 3, or save it for later:</p>
     <input type="text" id="b1-access-code" maxlength="5" placeholder="Enter 5-digit code">
@@ -74,7 +90,17 @@
   <!-- Challenge 3 -->
   <div id="b1-challenge-3" class="page hidden" style="background-image: url('https://drive.google.com/uc?id=10YcO6NQE4mLXT9ohwdSUVWXGYp6jB1ON');">
     <h2>War of Movements</h2>
-    <p>(text unchanged)</p>
+    <p>
+      Jacques recalls the events from July to December 1914. The assassination of Archduke Franz Ferdinand in Sarajevo set off a chain of events,
+      leading to Austria-Hungary's ultimatum to Serbia and eventually the declaration of war. Germany supported Austria-Hungary while France,
+      Russia, and Britain stood together. The war escalated quickly with Germany invading Belgium and advancing into France, but the French
+      stopped them at the Battle of the Marne. By December, the war had settled into a deadly stalemate of trench warfare.
+    </p>
+    <p>
+      How could Jacques, who just months ago was building windows in Bordeaux, have imagined that the lives of thousands of compatriots and English allies depended on him?
+      There wasn’t much time to think. He knew the path ahead, guided by his skills with maps. His thoughts turned to his wife and young daughter. Was it worth the risk?
+    </p>
+
     <iframe width="560" height="315" src="https://www.youtube.com/embed/PbwH1ZBnYds" allowfullscreen></iframe>
 
     <div id="b1-quiz-3-container">
@@ -87,13 +113,10 @@
   <!-- Final -->
   <div id="b1-final-page" class="page hidden" style="background-image: url('https://drive.google.com/uc?id=1-MH7k8zVMWrE4UPbPfqRJg1iD8ZxhzJN');">
     <h2>Jacques has succeeded!</h2>
-    <p>(text unchanged)</p>
+    <p>
+      Jacques has managed to overcome the field of barbed wire. Now he finds himself on a rural path, where remnants of destroyed cottages can be seen in the distance.
+      He knows the hardest part is yet to come, but his determination remains strong.
+    </p>
     <p>Your access code for the next breakout is: <strong id="b1-final-code"></strong></p>
   </div>
-    <template id="tpl-b1">
-  <!-- PEGA AQUÍ tu HTML de breakout1 tal cual (el que acabas de pasar) -->
-</template>
-<section id="screen-b1" class="screen hidden">
-  <div id="b1-scope"></div>
-</section>
 </div>
