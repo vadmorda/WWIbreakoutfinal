@@ -1,37 +1,48 @@
-#b3-scope {
-  margin: 0;
-  padding: 0;
-  font-family: "Special Elite","Roboto",sans-serif;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
+/* Minimal functional styles for Challenge 5 map interactions (no redesign) */
+.map-container {
+  position: relative;
+  max-width: 900px;
+  margin: 20px auto;
 }
 
-#b3-scope .page { display: none; width: 100%; min-height: 100vh; position: relative; }
-#b3-scope .page.active { display: block !important; }
+.battle-map {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
 
-#b3-scope .hidden { display: none !important; visibility: hidden; }
+.drop-zone {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(233, 69, 96, 0.9);
+  background: rgba(0,0,0,0.65);
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
 
-#b3-scope button {
-  padding: 15px 30px;
-  font-size: 1.5em;
-  background-color: #e94560;
-  color: white;
-  border: none;
+/* Approximate placement (keeps map usable). If you already had positions elsewhere, remove these. */
+#zone-saint-quentin { top: 32%; left: 28%; }
+#zone-marne        { top: 58%; left: 52%; }
+#zone-amiens       { top: 40%; left: 38%; }
+#zone-compiegne    { top: 48%; left: 44%; }
+
+.draggable-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px auto;
+  max-width: 900px;
+}
+
+.draggable {
+  padding: 10px 12px;
   border-radius: 8px;
-  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: grab;
+  user-select: none;
 }
-
-/* keep the rest of your CSS unchanged but under #b3-scope if you extend it */
-#b3-scope .intro-wrapper { display:flex; align-items:center; justify-content:flex-start; gap:20px; max-width:80%; margin:40px auto; padding:20px; text-align:left; }
-#b3-scope .intro-image-container { flex-shrink:0; width:30%; max-width:250px; }
-#b3-scope .intro-image { width:100%; max-width:250px; height:auto; border-radius:10px; display:block; }
-#b3-scope .intro-text { flex:1; text-align:left; background: rgba(255,255,255,0.1); padding:20px; border-radius:10px; }
-
-#b3-scope .video-container { text-align:center; margin-bottom:20px; }
-#b3-scope .answer-button { padding:10px; font-size:1.2em; background-color:#444; color:white; border:none; border-radius:5px; cursor:pointer; }
-#b3-scope .answer-button:hover { background-color:#e94560; }
-
-#b3-scope .timeline-event { background:#444; color:white; padding:15px; margin:10px; border-radius:8px; cursor:grab; width:80%; max-width:500px; }
-
-#b3-scope .note-warning { font-size:1.2em; color:#ffcc00; font-weight:bold; text-align:center; margin-top:20px; }
