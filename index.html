@@ -1,78 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>WWI Breakout – Integrated</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WW1 Breakout - Full Mission</title>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./shared/app.css" />
-  <link rel="stylesheet" href="./breakout1/breakout1.css" />
-  <link rel="stylesheet" href="./breakout2/breakout2.css" />
-  <link rel="stylesheet" href="./breakout3/breakout3.css" />
+  <link rel="stylesheet" href="./shared/progress.css">
 </head>
+<body class="ww1-shell">
+  <header>
+    <h1>WW1 Breakout – Full Mission</h1>
 
-<body>
-  <!-- Non-intrusive progress -->
-  <div id="app-progress" aria-label="Breakout progress"></div>
-
-  <main id="app" role="main">
-    <!-- Shell intro (minimal, not redesigning breakouts) -->
-    <section id="screen-shell" class="app-screen" data-screen="shell">
-      <div class="app-shell">
-        <h1>World War I Breakout</h1>
-        <p>Complete Part 1 → Part 2 → Part 3 to reach the final screen.</p>
-        <div class="app-shell-actions">
-          <button id="app-start" type="button">Start</button>
-          <button id="app-continue" type="button" class="hidden">Continue</button>
-          <button id="app-reset" type="button" class="app-secondary">Reset progress</button>
-        </div>
+    <div class="ww1-progress" aria-label="Progress">
+      <div class="bar" aria-hidden="true"><div class="fill" id="progressFill"></div></div>
+      <div class="steps">
+        <span class="badge" id="b1">Part 1</span>
+        <span class="badge" id="b2">Part 2</span>
+        <span class="badge" id="b3">Part 3</span>
+        <span class="badge" id="bf">Final</span>
       </div>
-    </section>
+    </div>
+  </header>
 
-<section id="screen-b1" class="app-screen hidden">
-  <div id="b1-scope"></div>
-</section>
+  <main>
+    <div class="ww1-card">
+      <p>
+        You will complete <strong>three parts</strong> of the WW1 Breakout in sequence.
+        Your progress is saved automatically on this device.
+      </p>
+      <p class="ww1-small">
+        Tip: If you refresh or close the browser, you can resume here.
+      </p>
 
-<template id="tpl-b1">
-  <!-- aquí pegado breakout1/breakout1.html -->
-</template>
-
-
-
-
-
-    
-    <section id="screen-b1" class="app-screen hidden" data-screen="b1">
-      <div id="b1-scope" class="breakout-scope"></div>
-    </section>
-
-    <section id="screen-b2" class="app-screen hidden" data-screen="b2">
-      <div id="b2-scope" class="breakout-scope"></div>
-    </section>
-
-    <section id="screen-b3" class="app-screen hidden" data-screen="b3">
-      <div id="b3-scope" class="breakout-scope"></div>
-    </section>
-
-    <section id="screen-final" class="app-screen hidden" data-screen="final">
-      <div class="app-shell">
-        <h2>Mission Complete</h2>
-        <p>You have completed all three parts.</p>
-        <button id="app-restart" type="button">Restart</button>
+      <div class="ww1-actions">
+        <button class="ww1-btn" id="start1">Start Part 1</button>
+        <button class="ww1-btn" id="start2">Start Part 2</button>
+        <button class="ww1-btn" id="start3">Start Part 3</button>
+        <button class="ww1-btn secondary" id="goFinal">Final Screen</button>
+        <button class="ww1-btn secondary" id="reset">Reset Progress</button>
       </div>
-    </section>
+    </div>
   </main>
 
-<script src="./shared/storage.js" defer></script>
-<script src="./shared/progress.js" defer></script>
+  <script src="./shared/progress.js"></script>
+  <script>
+    (function () {
+      const state = window.SharedProgress.loadState();
 
-<script src="./breakout1/breakout1.js" defer></script>
-<script src="./breakout2/breakout2.js" defer></script>
-<script src="./breakout3/breakout3.js" defer></script>
+      const fill = document.getElementById("progressFill");
+      const b1 = document.getElementById("b1");
+      const b2 = document.getElementById("b2");
+      const b3 = document.getElementById("b3");
+      const bf = document.getElementById("bf");
 
-<script src="./shared/app.js" defer></script>
+      const pct = window.SharedProgress.getProgressPercent(state);
+      fill.style.width = pct + "%";
 
+      if (state.part1.completed) b1.classList.add("done");
+      if (state.part2.completed) b2.classList.add("done");
+      if (state.part3.completed) b3.classList.add("done");
+      if (state.part1.completed && state.part2.completed && state.part3.completed) bf.classList.add("done");
+
+      // Locking: part2 requires part1, part3 requires part2 (sequence)
+      const start2 = document.getElementById("start2");
+      const start3 = document.getElementById("start3");
+      start2.disabled = !state.part1.completed;
+      start3.disabled = !state.part2.completed;
+
+      document.getElementById("start1").addEventListener("click", () => {
+        window.SharedProgress.setLastVisited(1);
+        location.href = "./breakout1/index.html";
+      });
+      document.getElementById("start2").addEventListener("click", () => {
+        window.SharedProgress.setLastVisited(2);
+        location.href = "./breakout2/index.html";
+      });
+      document.getElementById("start3").addEventListener("click", () => {
+        window.SharedProgress.setLastVisited(3);
+        location.href = "./breakout3/index.html";
+      });
+      document.getElementById("goFinal").addEventListener("click", () => {
+        location.href = "./final.html";
+      });
+
+      document.getElementById("reset").addEventListener("click", () => {
+        window.SharedProgress.resetAll();
+        location.reload();
+      });
+    })();
+  </script>
 </body>
 </html>
