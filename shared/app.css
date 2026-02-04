@@ -29,6 +29,9 @@ body {
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
+.progress-bar, #progress-bar, .topbar {
+  pointer-events: none;
+}
 
 .app-step {
   flex: 1;
