@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WW1 Breakout – Final</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./shared/progress.css">
+</head>
+<body class="ww1-shell">
+  <header>
+    <h1>WW1 Breakout – Mission Complete</h1>
+    <div class="ww1-progress" aria-label="Progress">
+      <div class="bar" aria-hidden="true"><div class="fill" id="progressFill"></div></div>
+      <div class="steps">
+        <span class="badge done">Part 1</span>
+        <span class="badge done">Part 2</span>
+        <span class="badge done">Part 3</span>
+        <span class="badge done">Final</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="ww1-card">
+      <p>
+        If you reached this screen after completing all parts, congratulations — the full WW1 mission is complete.
+      </p>
+      <div class="ww1-actions">
+        <button class="ww1-btn" onclick="location.href='./index.html'">Back to Home</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="./shared/progress.js"></script>
+  <script>
+    (function () {
+      const state = window.SharedProgress.loadState();
+      const pct = window.SharedProgress.getProgressPercent(state);
+      document.getElementById("progressFill").style.width = pct + "%";
+    })();
+  </script>
+</body>
+</html>
