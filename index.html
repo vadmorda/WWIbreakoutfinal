@@ -43,51 +43,51 @@
   </main>
 
   <script src="./shared/progress.js"></script>
-  <script>
-    (function () {
-      const state = window.SharedProgress.loadState();
+<script>
+  (function () {
+    const state = window.SharedProgress.loadState();
 
-      const fill = document.getElementById("progressFill");
-      const b1 = document.getElementById("b1");
-      const b2 = document.getElementById("b2");
-      const b3 = document.getElementById("b3");
-      const bf = document.getElementById("bf");
+    const fill = document.getElementById("progressFill");
+    const b1 = document.getElementById("b1");
+    const b2 = document.getElementById("b2");
+    const b3 = document.getElementById("b3");
+    const bf = document.getElementById("bf");
 
-      const pct = window.SharedProgress.getProgressPercent(state);
-      fill.style.width = pct + "%";
+    const pct = window.SharedProgress.getProgressPercent(state);
+    fill.style.width = pct + "%";
 
-      if (state.part1.completed) b1.classList.add("done");
-      if (state.part2.completed) b2.classList.add("done");
-      if (state.part3.completed) b3.classList.add("done");
-      if (state.part1.completed && state.part2.completed && state.part3.completed) bf.classList.add("done");
+    if (state.part1.completed) b1.classList.add("done");
+    if (state.part2.completed) b2.classList.add("done");
+    if (state.part3.completed) b3.classList.add("done");
+    if (state.part1.completed && state.part2.completed && state.part3.completed) bf.classList.add("done");
 
-      // Locking: part2 requires part1, part3 requires part2 (sequence)
-      const start2 = document.getElementById("start2");
-      const start3 = document.getElementById("start3");
-      start2.disabled = !state.part1.completed;
-      start3.disabled = !state.part2.completed;
+    const start2 = document.getElementById("start2");
+    const start3 = document.getElementById("start3");
+    start2.disabled = !state.part1.completed;
+    start3.disabled = !state.part2.completed;
 
-      document.getElementById("start1").addEventListener("click", () => {
-        window.SharedProgress.setLastVisited(1);
-        location.href = "./breakout1/index.html";
-      });
-      document.getElementById("start2").addEventListener("click", () => {
-        window.SharedProgress.setLastVisited(2);
-        location.href = "./breakout2/index.html";
-      });
-      document.getElementById("start3").addEventListener("click", () => {
-        window.SharedProgress.setLastVisited(3);
-        location.href = "./breakout3/index.html";
-      });
-      document.getElementById("goFinal").addEventListener("click", () => {
-        location.href = "./final.html";
-      });
+    const go = (path) => location.href = new URL(path, document.baseURI).toString();
 
-      document.getElementById("reset").addEventListener("click", () => {
-        window.SharedProgress.resetAll();
-        location.reload();
-      });
-    })();
-  </script>
+    document.getElementById("start1").addEventListener("click", () => {
+      window.SharedProgress.setLastVisited(1);
+      go("breakout1/index.html");
+    });
+    document.getElementById("start2").addEventListener("click", () => {
+      window.SharedProgress.setLastVisited(2);
+      go("breakout2/index.html");
+    });
+    document.getElementById("start3").addEventListener("click", () => {
+      window.SharedProgress.setLastVisited(3);
+      go("breakout3/index.html");
+    });
+    document.getElementById("goFinal").addEventListener("click", () => go("final.html"));
+
+    document.getElementById("reset").addEventListener("click", () => {
+      window.SharedProgress.resetAll();
+      location.reload();
+    });
+  })();
+</script>
+
 </body>
 </html>
