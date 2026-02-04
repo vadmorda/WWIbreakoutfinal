@@ -122,3 +122,51 @@
   window.Breakouts = window.Breakouts || {};
   window.Breakouts.b1 = { init };
 })();
+window.addEventListener("load", () => {
+  console.log("✅ FORCE BIND (load)");
+
+  const startBtn =
+    document.getElementById("btn-start") ||
+    document.querySelector("button")?.textContent?.trim() === "Start"
+      ? document.querySelector("button")
+      : document.querySelector("button#start, button.start, #start");
+
+  const resetBtn =
+    document.getElementById("btn-reset") ||
+    Array.from(document.querySelectorAll("button")).find(b => b.textContent.trim().toLowerCase().includes("reset"));
+
+  console.log("startBtn:", startBtn, "resetBtn:", resetBtn);
+
+  if (startBtn) {
+    startBtn.onclick = () => {
+      console.log("▶ Start clicked");
+
+      // Mostrar pantalla b1
+      const b1 = document.getElementById("screen-b1");
+      const home = document.getElementById("screen-home");
+      if (home) home.classList.add("hidden");
+      if (b1) b1.classList.remove("hidden");
+
+      // Llamar breakout1
+      if (window.Breakouts?.b1?.init) {
+        window.Breakouts.b1.init({
+          progress: { set() {} },
+          setBunkerCode() {},
+          completePart() {},
+        });
+      } else {
+        console.error("❌ Breakouts.b1.init not found");
+      }
+    };
+  } else {
+    console.error("❌ Start button not found in DOM");
+  }
+
+  if (resetBtn) {
+    resetBtn.onclick = () => {
+      console.log("↩ Reset clicked");
+      localStorage.clear();
+      location.reload();
+    };
+  }
+});
