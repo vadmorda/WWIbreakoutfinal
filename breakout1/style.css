@@ -1,1 +1,359 @@
-/* Global Styles */ body { margin: 0; padding: 0; font-family: "Special Elite", "Roboto", sans-serif; background-color: #000; color: #fff; text-align: center; background-size: cover; background-position: center; background-repeat: no-repeat; overflow: hidden; } /* Animations */ @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } } @media (max-width: 768px) { #global-title h1 { font-size: 3em; } .intro-content h2, .intro-content h1 { font-size: 1em; } } /* Utility Classes */ .hidden { display: none; } /* Title Styling */ #global-title h1 { font-size: 5em; color: #e94560; animation: blink 1.5s infinite; text-shadow: 0 0 10px #e94560, 0 0 20px #ff5f7e; margin-top: 20px; } /* Intro Content */ .intro-content { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100vh; } .intro-content h2, .intro-content h1 { background: rgba(0, 0, 0, 0.6); padding: 15px; border: 2px solid #e94560; color: #fff; border-radius: 10px; max-width: 800px; } .intro-content h1 { margin-top: 20px; font-size: 2em; } .intro-content .button { margin-top: 20px; display: inline-block; padding: 15px 30px; background-color: #e94560; color: white; border: none; border-radius: 8px; font-size: 1.5em; cursor: pointer; text-align: center; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; } .intro-content .button:hover { transform: scale(1.1); box-shadow: 0 0 15px #e94560; } #code-entry { margin-top: 20px; text-align: center; } #code-entry input { margin-top: 10px; padding: 10px 15px; font-size: 1.2em; border: 2px solid #e94560; border-radius: 8px; width: 250px; text-align: center; } #code-entry input:focus { outline: none; border-color: #ff5f7e; } #code-entry p { margin-top: 10px; font-size: 1.1em; } /* Page Handling */ /* Control de visibilidad de las páginas */ .page { display: none; /* Ocultar por defecto */ position: absolute; width: 100%; height: 100%; top: 0; left: 0; } .page.active { display: flex; /* Mostrar la página activa */ flex-direction: column; justify-content: center; align-items: center; } /* Quiz */ #quiz, #questions-container-2 { margin: 20px auto; text-align: center; background: rgba(0, 0, 0, 0.8); padding: 20px; border: 2px solid #e94560; border-radius: 10px; max-width: 600px; } #answers button { display: block; margin: 10px auto; padding: 10px 20px; background-color: #444; color: white; border: none; border-radius: 5px; cursor: pointer; } #answers button:hover { background-color: #e94560; } /* Transition Pages */ #transition-page, #transition-to-challenge-3 { text-align: center; padding: 20px; background: rgba(0, 0, 0, 0.8); border: 2px solid #e94560; border-radius: 10px; color: white; max-width: 800px; margin: 20px auto; } #transition-page h2, #transition-to-challenge-3 h2 { font-size: 2.5em; color: #e94560; margin-bottom: 15px; } #transition-to-challenge-3 img { margin: 15px auto; max-width: 100%; border-radius: 10px; } #transition-to-challenge-3 p { font-size: 1.2em; margin: 15px auto; max-width: 750px; } /* Página de transición al reto 3 */ #transition-to-challenge-3 { display: none; /* Oculta inicialmente */ width: 100%; /* Asegura que ocupa todo el ancho */ height: 100%; /* Asegura que ocupa toda la altura */ justify-content: center; /* Centra contenido */ align-items: center; /* Centra contenido */ text-align: center; background: rgba(0, 0, 0, 0.8); /* Fondo oscuro */ color: #fff; padding: 20px; border-radius: 10px; } #transition-to-challenge-3.active { display: flex; /* Mostrar como flexbox */ } #transition-to-challenge-3 input { margin-top: 20px; margin-bottom: 10px; padding: 10px 15px; font-size: 1.2em; border: 2px solid #e94560; border-radius: 8px; max-width: 250px; width: 100%; text-align: center; } #transition-to-challenge-3 input:focus { outline: none; border-color: #ff5f7e; } #transition-to-challenge-3 .button { display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 8px; font-size: 1.2em; cursor: pointer; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; } #transition-to-challenge-3 .button:hover { transform: scale(1.1); box-shadow: 0 0 15px #4CAF50, 0 0 25px #4CAF50; } #code-error-message, #code-entry p { margin-top: 10px; } /* --- Updated Reto 2 Styles --- */ #challenge-2 { background-image: url('https://i.ibb.co/vv1fS6h/war-map-background.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; overflow: hidden; } #map-container { text-align: center; max-width: 90%; margin: auto; padding: 20px; } #map-container img { width: 90%; max-width: 1000px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); } #start-challenge-2 { margin-top: 20px; padding: 20px 50px; font-size: 1.8em; background-color: #e94560; color: #fff; border: none; border-radius: 10px; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; } #start-challenge-2:hover { transform: scale(1.1); box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5); } #answers-container-2 button { width: 90%; max-width: 600px; padding: 15px 20px; margin: 10px auto; font-size: 1.5em; background-color: #e94560; color: white; border: none; border-radius: 10px; cursor: pointer; text-align: center; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; } #answers-container-2 button:hover { transform: scale(1.1); box-shadow: 0 4px 10px rgba(233, 69, 96, 0.6); } #questions-container-2 h2 { background: rgba(0, 0, 0, 0.7); border-radius: 15px; padding: 10px; } #questions-container-2 { max-width: 90%; padding: 20px; } #questions-container-2 p { margin: 15px auto; color: red; font-weight: bold; } /* Botón "Next" */ #next-button-2 { display: block; /* Asegura que es visible */ margin: 20px auto; /* Centrado */ padding: 15px 40px; font-size: 1.5em; background-color: #e94560; color: white; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; } #next-button-2.hidden { display: none; /* Oculta cuando se aplica la clase 'hidden' */ } #next-button-2:hover { transform: scale(1.1); box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5); }
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Special Elite", "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  #global-title h1 {
+    font-size: 3em;
+  }
+  .intro-content h2,
+  .intro-content h1 {
+    font-size: 1em;
+  }
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+/* Title Styling */
+#global-title h1 {
+  font-size: 5em;
+  color: #e94560;
+  animation: blink 1.5s infinite;
+  text-shadow: 0 0 10px #e94560, 0 0 20px #ff5f7e;
+  margin-top: 20px;
+}
+
+/* Intro Content */
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.intro-content h2,
+.intro-content h1 {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border: 2px solid #e94560;
+  color: #fff;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+.intro-content h1 {
+  margin-top: 20px;
+  font-size: 2em;
+}
+
+.intro-content .button {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5em;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.intro-content .button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #e94560;
+}
+
+#code-entry {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#code-entry input {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  border: 2px solid #e94560;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+}
+
+#code-entry input:focus {
+  outline: none;
+  border-color: #ff5f7e;
+}
+
+#code-entry p {
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+/* Page Handling */
+/* Control de visibilidad de las páginas */
+.page {
+  display: none; /* Ocultar por defecto */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.page.active {
+  display: flex; /* Mostrar la página activa */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Quiz */
+#quiz, #questions-container-2 {
+  margin: 20px auto;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border: 2px solid #e94560;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+#answers button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#answers button:hover {
+  background-color: #e94560;
+}
+
+/* Transition Pages */
+#transition-page,
+#transition-to-challenge-3 {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #e94560;
+  border-radius: 10px;
+  color: white;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+#transition-page h2,
+#transition-to-challenge-3 h2 {
+  font-size: 2.5em;
+  color: #e94560;
+  margin-bottom: 15px;
+}
+
+#transition-to-challenge-3 img {
+  margin: 15px auto;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#transition-to-challenge-3 p {
+  font-size: 1.2em;
+  margin: 15px auto;
+  max-width: 750px;
+}
+
+/* Página de transición al reto 3 */
+#transition-to-challenge-3 {
+  display: none; /* Oculta inicialmente */
+  width: 100%; /* Asegura que ocupa todo el ancho */
+  height: 100%; /* Asegura que ocupa toda la altura */
+  justify-content: center; /* Centra contenido */
+  align-items: center; /* Centra contenido */
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#transition-to-challenge-3.active {
+  display: flex; /* Mostrar como flexbox */
+}
+
+#transition-to-challenge-3 input {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  border: 2px solid #e94560;
+  border-radius: 8px;
+  max-width: 250px;
+  width: 100%;
+  text-align: center;
+}
+
+#transition-to-challenge-3 input:focus {
+  outline: none;
+  border-color: #ff5f7e;
+}
+
+#transition-to-challenge-3 .button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#transition-to-challenge-3 .button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #4CAF50, 0 0 25px #4CAF50;
+}
+
+#code-error-message,
+#code-entry p {
+  margin-top: 10px;
+}
+
+/* --- Updated Reto 2 Styles --- */
+#challenge-2 {
+  background-image: url('https://i.ibb.co/vv1fS6h/war-map-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+#map-container {
+  text-align: center;
+  max-width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+#map-container img {
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#start-challenge-2 {
+  margin-top: 20px;
+  padding: 20px 50px;
+  font-size: 1.8em;
+  background-color: #e94560;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#start-challenge-2:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+}
+
+#answers-container-2 button {
+  width: 90%;
+  max-width: 600px;
+  padding: 15px 20px;
+  margin: 10px auto;
+  font-size: 1.5em;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#answers-container-2 button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(233, 69, 96, 0.6);
+}
+
+#questions-container-2 h2 {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#questions-container-2 {
+  max-width: 90%;
+  padding: 20px;
+}
+
+
+#questions-container-2 p {
+  margin: 15px auto;
+  color: red;
+  font-weight: bold;
+}
+/* Botón "Next" */
+#next-button-2 {
+  display: block; /* Asegura que es visible */
+  margin: 20px auto; /* Centrado */
+  padding: 15px 40px;
+  font-size: 1.5em;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#next-button-2.hidden {
+  display: none; /* Oculta cuando se aplica la clase 'hidden' */
+}
+
+#next-button-2:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+}
